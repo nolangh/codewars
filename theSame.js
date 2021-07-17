@@ -21,5 +21,4 @@ function comp(array1, array2) {
   const sorted2 = array2.sort(function (a, b) {
     return a - b;
   });
-  
 }
