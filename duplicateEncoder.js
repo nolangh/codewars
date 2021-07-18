@@ -8,6 +8,19 @@ NOTE -- example of results
 "Success"  =>  ")())())"
 "(( @"     =>  "))((" 
 */
-function duplicateEncode(word) {}
 
-const test = duplicateEncode();
+function duplicateEncode(word) {
+  word = word.toLowerCase();
+  let encoded = "";
+  for (let i of word) {
+    if (word.indexOf(i) === word.lastIndexOf(i)) {
+      encoded += "(";
+    } else {
+      encoded += ")";
+    }
+  }
+  return encoded;
+}
+
+const test = duplicateEncode("Success"); // ")())())"
+console.log(test);
