@@ -12,6 +12,9 @@ EXAMPLES -----
 "indivisibility" -> 1 # 'i' occurs six times
 "Indivisibilities" -> 2 # 'i' occurs seven times and 's' occurs twice
 */
+
+/* NOTE try using .filter() to make an array of the values that repeat. then return the length of the new array */
+
 function duplicateCount(text) {
   text = text.toLowerCase();
   let duplicate = {};
