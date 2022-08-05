@@ -1,10 +1,8 @@
 const firstAndLast = (string) => {
-	//const newString = [];
 	console.log(string);
 	if (string.length <= 2) {
 		return string;
+	} else {
+		return string.slice(1, -1);
 	}
-	return string;
-	console.log(string);
 };
-console.log(firstAndLast("fi"));
