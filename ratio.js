@@ -12,7 +12,7 @@ const plusMinus = (arr) => {
 			zero++;
 		}
 	}
-	return [pos, neg, zero];
+	return [pos / arr.length, neg / arr.length, zero / arr.length];
 };
 
 console.log(plusMinus([-1, 2, 3, 0, 6, 0, 7]));
