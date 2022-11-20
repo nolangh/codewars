@@ -1,30 +1,26 @@
-/*
-NOTE [w,n,s,e]
-NOTE array needs 10 items to return true
-TODO return yes if walk is 10 minutes and returns to original spot
-*/
-
 function isValidWalk(walk) {
-  let ns = 0;
-  let ew = 0;
-  if (walk.length > 10) {
-    return false;
-  }
-  if (walk.length === 10) {
-    for (let i of walk) {
-      if (i == "n") ns += 1;
-      if (i == "s") ns -= 1;
-      if (i == "e") ew += 1;
-      if (i == "w") ew -= 1;
-    }
-  } else return false;
-  return ns === 0 && ew === 0;
+	let ns = 0;
+	let ew = 0;
+	if (walk.length > 10) {
+		return false;
+	} else if (walk.length === 10) {
+		for (let i in walk) {
+			switch (i) {
+				case "n":
+					ns += 1;
+					break;
+				case "s":
+					ns -= 1;
+					break;
+				case "e":
+					ew += 1;
+					break;
+				case "w":
+					ew -= 1;
+					break;
+			}
+		}
+	} else return false;
+	return ns === 0 && ew === 0;
 }
-
-const test = isValidWalk(["n", "s", "n", "s", "n", "s", "n", "s", "n", "s"]); //should return true
-console.log(test);
-
-/*
-isValidWalk(['w','e','w','e','w','e','w','e','w','e','w','e']), 'should return false')
-!isValidWalk(['n','n','n','s','n','s','n','s','n','s']), 'should return false')
-*/
+console.log(isValidWalk(["n", "s", "n", "s", "n", "s", "n", "s", "n", "s"]));
